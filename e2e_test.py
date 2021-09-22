@@ -10,7 +10,7 @@
 
 import requests
 
-HOST='http://continuous-deployment-python.appspot.com'
+HOST='http://cheney-ci-cd.appspot.com'
 
 # [START e2e]
 response = requests.get(f"{HOST}/get_author/ulysses")

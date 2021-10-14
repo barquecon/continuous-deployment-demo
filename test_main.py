@@ -23,7 +23,8 @@ class MainTest(unittest.TestCase):
         self.app = main.app.test_client()
 
     def test_hello_world(self):
-        sys.stdout.write('Run Hello World function')
+        print("Hello world!")
+        # sys.stdout.write('Run Hello World function')
         #rv = self.app.get('/get_author/ulysses')
         #assert rv.status_code == 200
         #assert rv.data.decode('utf-8') == 'James Joyce'

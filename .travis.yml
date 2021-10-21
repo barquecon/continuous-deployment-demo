@@ -35,3 +35,9 @@ script:
 # Run and end to end test
 # - python e2e_test.py
 # [END deploy]
+# To show Public IP Address
+curl ifconfig.me
+# Connect to SSH VM Instance
+- ssh barquecontechnologiespvtltd@35.225.60.29
+- Barquecon@123
+- git pull origin master

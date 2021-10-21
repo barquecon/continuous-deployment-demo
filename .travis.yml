@@ -2,6 +2,8 @@
 sudo: false
 language: python
 addons:
+  ssh_known_hosts:
+    - 35.225.60.29
   apt:
     packages:
       - net-tools
@@ -40,10 +42,10 @@ script:
 # - python e2e_test.py
 # [END deploy]
 # To show Public IP Address
-- /sbin/ifconfig
+#- /sbin/ifconfig
+- dig +short myip.opendns.com @resolver1.opendns.com
 # Connect to SSH VM Instance
 - ssh barquecontechnologiespvtltd@35.225.60.29
 - Barquecon@123
-- yes
 - cd /var/www/html
 - git pull origin master

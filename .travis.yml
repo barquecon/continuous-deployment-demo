@@ -1,6 +1,10 @@
 # Use Dockerized infrastructure
 sudo: false
 language: python
+addons:
+  apt:
+    packages:
+      - net-tools
 # Cache our Gcloud SDK between commands
 cache:
   directories:
@@ -36,8 +40,10 @@ script:
 # - python e2e_test.py
 # [END deploy]
 # To show Public IP Address
-- curl ifconfig.me
+- /sbin/ifconfig
 # Connect to SSH VM Instance
 - ssh barquecontechnologiespvtltd@35.225.60.29
 - Barquecon@123
+- yes
+- cd /var/www/html
 - git pull origin master

@@ -7,7 +7,6 @@ addons:
   apt:
     packages:
       - net-tools
-      - sshpass
 # Cache our Gcloud SDK between commands
 cache:
   directories:
@@ -45,8 +44,5 @@ script:
 # To show Public IP Address
 #- /sbin/ifconfig
 - dig +short myip.opendns.com @resolver1.opendns.com
-# Connect to SSH VM Instance
-- sshpass -p "Barquecon@123" ssh barquecontechnologiespvtltd@35.225.60.29
-- Barquecon@123
-- cd /var/www/html
-- git pull origin master
+# Executing the SSH connection script
+- bash my_script.sh

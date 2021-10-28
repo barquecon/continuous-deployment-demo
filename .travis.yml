@@ -3,7 +3,7 @@ sudo: false
 language: python
 addons:
   ssh_known_hosts:
-    - 35.225.60.29
+    - 35.222.190.100
   apt:
     packages:
       # - net-tools

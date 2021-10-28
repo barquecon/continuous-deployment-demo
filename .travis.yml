@@ -14,7 +14,7 @@ cache:
   - "$HOME/google-cloud-sdk/"
 env:
 # Make sure gcloud command is on our PATH and the App Engine SDK is in the Python path
-# - PATH=$PATH:${HOME}/google-cloud-sdk/bin PYTHONPATH=${PYTHONPATH}:./lib CLOUDSDK_CORE_DISABLE_PROMPTS=1
+- PATH=$PATH:${HOME}/google-cloud-sdk/bin PYTHONPATH=${PYTHONPATH}:./lib CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
 # If the SDK is not already cached, download it and unpack it
 # - if [ ! -d ${HOME}/google-cloud-sdk ]; then

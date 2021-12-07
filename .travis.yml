@@ -6,53 +6,15 @@ addons:
     - 35.212.189.104
   apt:
     packages:
-      # - net-tools
       - sshpass
-# Cache our Gcloud SDK between commands
-# cache:
-#   directories:
-#   - "$HOME/google-cloud-sdk/"
-# env:
-# # # Make sure gcloud command is on our PATH and the App Engine SDK is in the Python path
-# - PATH=$PATH:${HOME}/google-cloud-sdk/bin PYTHONPATH=${PYTHONPATH}:./lib CLOUDSDK_CORE_DISABLE_PROMPTS=1
-before_install:
-# If the SDK is not already cached, download it and unpack it
-# - if [ ! -d ${HOME}/google-cloud-sdk ]; then
-#      curl https://sdk.cloud.google.com | bash;
-#   fi
-# [START auth]
-# Decrypt the credentials we added to the repo using the key we added with the Travis command line tool
-# - openssl aes-256-cbc -K $encrypted_d80a2d296111_key -iv $encrypted_d80a2d296111_iv -in credentials.tar.gz.enc -out credentials.tar.gz -d
-# - tar -xzf credentials.tar.gz
-# - mkdir -p lib
-# Here we use the decrypted service account credentials to authenticate the command line tool
-# - gcloud auth activate-service-account --key-file client-secret.json
-# [END auth]
 install:
-# Set the correct project to deploy to
-# - gcloud config set project lithe-willow-279205
-# Install the Python dependencies
-# - pip install -r requirements.txt -t lib/
+# Install the dependencies
 script:
-# Run the unit tests
-# - python test_main.py
-# - grep "nameserver" /etc/resolv.conf
-
 # [START deploy]
 # Deploy the app
 - sshpass -p $SSH_PASS ssh $USER@$HOST "pwd;"
 
-# - gcloud -q app deploy app.yaml --promote
-# Run and end to end test
-# - python e2e_test.py
-# [END deploy]
-# To show Public IP Address
-#- /sbin/ifconfig
-# - dig +short myip.opendns.com @resolver1.opendns.com
-# Executing the SSH connection script
-# - bash my_script.sh
-# - sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git pull origin $BRANCH_MASTER"
-# safelist
 branches:
   only:
+  - master
   - staging

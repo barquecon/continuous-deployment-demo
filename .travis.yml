@@ -12,7 +12,7 @@ install:
 script:
 # [START deploy]
 # Deploy the app
-- sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git status"
+- sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git pull origin staging"
 
 branches:
   only:

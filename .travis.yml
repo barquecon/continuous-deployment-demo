@@ -12,12 +12,16 @@ install:
 jobs:
   include:
     - name: master branch
-      script: - sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git pull origin master"
+      script: 
+        - echo "Master Branch"
+        - sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git pull origin master"
       if: branch = master
     - name: other branches
-      script: - sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git pull origin staging"
+      script:
+        - echo "Staging Branch"
+        - sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git pull origin staging"
       if: branch != master
-script:
+# script:
 # [START deploy]
 # Deploy the app
 # - sshpass -p $SSH_PASS ssh $USER@$HOST "cd $SERVER_PATH; sudo git pull origin staging"
